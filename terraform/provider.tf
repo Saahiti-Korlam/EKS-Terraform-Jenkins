@@ -1,3 +1,13 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "harshicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+
+
 locals {
   region          = "ap-south-1"
   name            = "watches-eks-cluster"
@@ -9,8 +19,4 @@ locals {
   tags = {
     Example = local.name
   }
-}
-
-provider "aws" {
-  region = "ap-south-1"
 }
